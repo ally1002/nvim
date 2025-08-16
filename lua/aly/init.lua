@@ -4,4 +4,3 @@ vim.g.maplocalleader = " "
 require("aly.options")
 require("aly.keymap")
 require("aly.lazy")
-
