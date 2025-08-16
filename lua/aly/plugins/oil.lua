@@ -2,13 +2,6 @@ return {
   {
     'stevearc/oil.nvim',
     config = function()
-      CustomOilBar = function()
-        local path = vim.fn.expand '%'
-        path = path:gsub('oil://', '')
-
-        return '  ' .. vim.fn.fnamemodify(path, ':.')
-      end
-
       require('oil').setup {
         keymaps = {
           ['<C-h>'] = false,
@@ -18,9 +11,7 @@ return {
           ['<M-h>'] = 'actions.select_split',
           ['<C-q>'] = 'actions.add_to_qflist',
         },
-        view_options = {
-          show_hidden = true,
-        },
+        view_options = { show_hidden = true },
       }
 
       -- Open parent directory in current window
