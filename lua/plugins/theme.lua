@@ -1,7 +1,9 @@
 return {
-  'EdenEast/nightfox.nvim',
-  priority = 1000,
-  init = function()
-    vim.cmd.colorscheme 'dayfox'
-  end,
+  {
+    'EdenEast/nightfox.nvim',
+    name = 'colorscheme',
+    config = function()
+      vim.cmd 'colorscheme carbonfox'
+    end,
+  },
 }

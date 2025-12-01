@@ -1,9 +1,11 @@
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.guicursor = 'n-v-i-c:block'
+vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.signcolumn = 'yes'
 vim.opt.inccommand = 'split'
+vim.opt.wrap = false
 
 vim.opt.showmode = false
 vim.opt.swapfile = false
