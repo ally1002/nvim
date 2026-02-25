@@ -1,0 +1,24 @@
+return {
+  'ally1002/spec-utils.nvim',
+  dependencies = {
+    { 'nvim-lua/plenary.nvim', name = 'plenary' },
+  },
+  config = function()
+    require('spec-utils').setup {}
+
+    local Utils = require 'spec-utils.utils'
+    local File = require 'spec-utils.file'
+
+    vim.keymap.set('n', '<leader><C-t>', function()
+      Utils.switch_between_test_and_implementation(vim.api.nvim_buf_get_name(0))
+    end)
+
+    vim.keymap.set('n', '<leader><C-y>', function()
+      File.copy_test_file(vim.api.nvim_buf_get_name(0))
+    end)
+
+    vim.keymap.set('n', '<leader><C-p>', function()
+      File.copy_current_relative_path()
+    end)
+  end,
+}

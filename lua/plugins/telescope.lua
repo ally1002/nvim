@@ -13,6 +13,9 @@ return {
       vim.keymap.set('n', '<leader>sG', builtin.git_status, { desc = 'Telescope git status' })
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Telescope help tags' })
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = 'Telescope builtin' })
+      vim.keymap.set('n', '<leader>sn', function()
+        builtin.find_files { cwd = vim.fn.stdpath 'config' }
+      end, { desc = '[S]earch [N]eovim files' })
     end,
   },
   { 'nvim-telescope/telescope-ui-select.nvim' },
